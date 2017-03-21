@@ -1,14 +1,14 @@
+#! /usr/bin/env ruby
 require 'sinatra'
-require 'json'
 
 get '/' do
   @tasks =
     [
-      ['Work',     2],
-      ['Eat',      2],
-      ['Commute',  2],
-      ['Watch TV', 11],
-      ['Sleep',    12]
+      ['Work',     0],
+      ['Eat',      100],
+      ['Commute',  100],
+      ['Watch TV', 100],
+      ['Sleep',    0]
     ]
   haml :index
 end
