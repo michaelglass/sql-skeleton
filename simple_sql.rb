@@ -1,14 +1,9 @@
 #! /usr/bin/env ruby
 require 'sinatra'
+require 'sqlite3'
 
 get '/' do
-  @tasks =
-    [
-      ['Work',     0],
-      ['Eat',      100],
-      ['Commute',  100],
-      ['Watch TV', 100],
-      ['Sleep',    0]
-    ]
+  db = SQLite3::Database.new 'db/test.db'
+  @tasks = db.execute('select * from activity_duration')
   haml :index
 end
