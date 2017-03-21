@@ -1,2 +1,2 @@
 #!/bin/bash
-rerun "ruby simple_sql.rb"
+rerun "ruby simple_sql.rb $1"

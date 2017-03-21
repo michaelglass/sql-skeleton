@@ -10,8 +10,31 @@ Setup
 ```bash
 $ gem install bunder
 $ bundle install
-# then start the application
+```
+
+## Bootstrap your database
+
+### For SQLite
+```bash
+$ ruby db/bootstrap_sqlite.rb
+```
+
+### For Postgres
+```bash
+$ ruby db/bootstrap_postgres.rb
+```
+
+## Start the app
+
+### For SQLite
+```bash
 $ ./run_with_reload.sh
 ```
+
+### For Postgres
+```bash
+$ ./run_with_reload postgres
+```
+
 
 And open [http://localhost:4567](http://localhost:4567)
