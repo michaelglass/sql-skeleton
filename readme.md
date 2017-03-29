@@ -8,7 +8,7 @@ Setup
 (We assume you already have a fairly recent ruby installed)
 
 ```bash
-$ gem install bunder
+$ gem install bundler
 $ bundle install
 ```
 
