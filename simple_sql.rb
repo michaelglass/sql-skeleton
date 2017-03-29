@@ -3,18 +3,18 @@ require 'sinatra'
 require 'pry'
 
 get '/' do
-  @tasks = tasks
+  @tasks = tasks('select * from activity_duration')
   haml :index
 end
 
-def sqlite_tasks
+def sqlite_tasks(query)
   db = SQLite3::Database.new 'db/test.db'
-  db.execute('select * from activity_duration')
+  db.execute(query)
 end
 
-def postgres_tasks
+def postgres_tasks(query)
   db = PG.connect
-  db.exec('select * from activity_duration').values.map { |a, b| [a, b.to_i] }
+  db.exec(query).values.map { |a, b| [a, b.to_i] }
 end
 
 if ARGV.first == 'postgres'
