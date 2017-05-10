@@ -14,7 +14,7 @@ end
 
 def postgres_tasks(query)
   db = PG.connect
-  db.exec(query).values.map { |a, b| [a, b.to_i] }
+  db.exec(query).values.map { |a, b| [a] + b.map(&:to_i) }
 end
 
 if ARGV.first == 'postgres'
